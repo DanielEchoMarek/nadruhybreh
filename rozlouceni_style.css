@@ -1,0 +1,267 @@
+*{
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: montserrat;
+  background: url(background.jpg);
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+}
+
+nav{
+  background: #8b625b;
+  height: 80px;
+  width: 100%;
+  display: flex;
+  z-index: 100;
+}
+
+.logo img{
+  width: 130px;
+  margin-right: 10px;
+  padding-left: 50px;
+}
+
+.logo{
+  flex: 1;
+}
+
+nav ul{
+  float: right;
+  margin-right: 20px;
+}
+
+nav ul li{
+  display: inline-block;
+  line-height: 80px;
+  margin: 0 20px;
+}
+
+nav ul li a{
+  color: white;
+  font-size: 17px;
+  padding: 7px 13px;
+  border-radius: 7px;
+  text-transform: uppercase;
+}
+
+a:hover{
+  background-color: #a47b74;
+  transition: .5s;
+}
+
+.checkbtn{
+  font-size: 30px;
+  color: white;
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+
+#check{
+  display: none;
+}
+
+h1{
+  color: #8b625b;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-size: 4vh;
+}
+
+p{
+  justify-content: center;
+  text-align: center;
+  padding-left: 20vw;
+  padding-right: 20vw;
+  font-size: 2.5vh;
+}
+
+.container{
+  position: absolute;
+  width: 70vw;
+  height: 60vh;
+  margin-left: 17vw;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider{
+  position: absolute;
+  inset: 40px 200px 80px 80px;
+  background: #E6D0CA;
+  border-radius: 20px;
+}
+
+.slider .slides{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 240px;
+  height: 320px;
+  background: var(--img);
+  background-size: cover;
+  background-position: center;
+  transition: 0.5s;
+  border-radius: 20px;
+}
+
+.slider .slides:nth-child(1),
+.slider .slides:nth-child(2){
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateY(0);
+  box-shadow: 0 25px 50px rgba(0,0,0,0);
+  background-size: cover;
+}
+
+.slider .slides:nth-child(3){
+  left: calc(50% + 240px);
+  background-size: cover;
+}
+
+.slider .slides:nth-child(4){
+  left: calc(50% + 600px);
+  background-size: cover;
+}
+
+.slider .slides:nth-child(5){
+  left: calc(50% + 760px);
+  background-size: cover;
+  opacity: 0;
+}
+
+.buttons{
+  position: absolute;
+  bottom: 15px;
+  display: flex;
+  gap: 20px;
+}
+
+.buttons span{
+  position: relative;
+  width: 50px;
+  height: 50px;
+  background: #8b625b;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.buttons span::before{
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-top: 4px solid #fff;
+  border-left: 4px solid #fff;
+  transform: rotate(315deg) translate(2px,2px);
+}
+
+.buttons span:nth-child(2)::before{
+  transform: rotate(135deg) translate(2px,2px);
+}
+
+.buttons span:active{
+  opacity: 0.5;
+}
+
+@media (max-width: 1000px){
+  label.logo{
+    font-size: 30px;
+    padding-left: 50px;
+  }
+  nav ul li a{
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 1050px){
+  .checkbtn{
+    display: block;
+  }
+  ul{
+    z-index: 2;
+    position: fixed;
+    width: 100%;
+    height: 35vh;
+    background: #8b625b;
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: all .5s;
+  }
+  nav ul li{
+    width: 100%;
+    display: block;
+    margin: 15px 0;
+    line-height: 30px;
+  }
+  nav ul li a{
+    font-size: 20px;
+  }
+  a.hover{
+    background: none;
+    color: #000;
+  }
+  #check:checked ~ ul{
+    left: 0;
+  }
+}
+@media (max-width: 900px){
+  body{
+    background: #E6D0CA;
+  }
+  p{
+    padding-left: 15px;
+    padding-right: 30px;
+    text-align: center;
+    justify-content: center;
+  }
+  .container{
+    width: 100vw;
+    height: 70vh;
+    margin-left: -2vw;
+  }
+  .slider{
+    position: absolute;
+    inset: 40px 40px 200px 40px;
+  }
+  .slider .slides{
+    width: 100px;
+    height: 100px;
+    top: initial;
+    bottom: -170px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+  }
+  .slider .slides:nth-child(1),
+  .slider .slides:nth-child(2){
+    top: initial;
+    bottom: 0px;
+  }
+  .slider .slides:nth-child(3){
+    left: 0;
+  }
+  .slider .slides:nth-child(4){
+    left: 120px;
+  }
+  .slider .slides:nth-child(5){
+    left: 240px;
+  }
+}

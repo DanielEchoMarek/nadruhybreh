@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Poslední rozloučení</title>
+    <link rel="icon" href="logo.png" type="image/x-icon">
+    <meta name="viewport" content="swidth=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="rozlouceni_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">
+        <img src="logo.png" alt="logo">
+      </div>
+      <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <ul>
+        <li><a href="index.html">Domů</a></li>
+        <li><a href="nabizime.html">Nabízíme</a></li>
+        <li><a href="#">Poslední rozloučení</a></li>
+        <li><a href="nastym.html">Náš tým</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </nav>
+    <h1>Poslední rozloučení</h1>
+    <p>Věříme, že si každý zaslouží jedinečné a smysluplné rozloučení. Každý životní příběh si zaslouží dobrý konec s krásným smutečním obřadem, který může mít mnoho podob. Rády bychom s vámi vytvořily bezpečný prostor pro prožití smutku ze ztráty blízkého a provedly vás posledním rozloučením, které vám dává smysl.</p>
+    <br>
+    <p>Z naší kultury vymizelo mnoho svátků a obřadů. Smuteční obřad je jeden z mála, který zůstává napříč společností respektován. Spolu s vámi jej hodláme rozvíjet, dát mu nový obsah a přívětivější průběh, vřelý, lidský, laskavý.
+    S námi můžete procesem rozloučení proplout s hlubokou úctou a láskou.</p>
+    <br>
+    <p>Poslední rozloučení může proběhnout na místě přírodního hřbitova Vzpomínky pod Lysou, ale také na kterémkoli místě, které máte rádi, nebo které zesnulý rád navštěvoval.
+    Povzbudíme vás ve spolutvoření posledního rozloučení s rodinou nebo s přáteli, pokud vám to dává smysl. Můžeme tak společně vytvořit opravdové rozloučení s osobitým příběhem zemřelého.</p>
+    <div class="container">
+      <div class="slider">
+        <div class="slides" style="--img: url('rozlouceni1.jpg')"></div>
+        <div class="slides" style="--img: url('rozlouceni2.jpg')"></div>
+        <div class="slides" style="--img: url('rozlouceni3.jpg')"></div>
+        <div class="slides" style="--img: url('rozlouceni4.jpg')"></div>
+        <div class="slides" style="--img: url('rozlouceni5.jpg')"></div>
+      </div>
+      <div class="buttons">
+        <span class="prev"></span>
+        <span class="next"></span>
+      </div>
+    </div>
+    <script>
+      let next = document.querySelector('.next');
+      let prev = document.querySelector('.prev');
+      let slider = document.querySelector('.slider');
+
+      next.addEventListener('click', function(){
+        let slides=document.querySelectorAll('.slides');
+        slider.appendChild(slides[0]);
+      })
+      prev.addEventListener('click', function(){
+        let slides=document.querySelectorAll('.slides');
+        slider.prepend(slides[slides.length - 1]);
+      })
+    </script>
+</body>
