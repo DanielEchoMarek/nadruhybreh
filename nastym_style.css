@@ -74,7 +74,7 @@ a:hover{
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  margin-top: 3vh;
+  margin-top: 1vh;
 }
 
 .card{
@@ -154,3 +154,4 @@ a:hover{
     background: #D9E5C2;
   }
 }
+
